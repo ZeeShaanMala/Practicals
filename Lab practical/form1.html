@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="form1.css">
+  <title>Form</title>
+</head>
+<body>
+  <form action="#">
+    <h1>Form</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <span class="show-password">
+      <input type="checkbox" id="show-password-checkbox">
+      <label for="show-password-checkbox">Show Password</label>
+    </span>
+
+    <label for="card-number">Card Number:</label>
+    <input type="text" id="card-number" name="card-number" inputmode="numeric" pattern="[0-9]*" required>
+
+    <label for="expiration-date">Expiration Date:</label>
+    <input type="text" id="expiration-date" name="expiration-date" inputmode="numeric" pattern="[0-9]*" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" inputmode="numeric" pattern="[0-9]*" required>
+
+    <button type="submit">Submit Payment</button>
+  </form>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const showPasswordCheckbox = document.getElementById('show-password-checkbox');
+
+    showPasswordCheckbox.addEventListener('change', () => {
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
+</body>
+</html>
+
